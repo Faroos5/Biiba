@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#160d25">
+<title>إلى بيباا — من فارس ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+:root{--pink:#ff6f9f;--rose:#ffb4cb;--cream:#fff1f6;--bg:#130d22}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;font-family:'Cairo',Tahoma,sans-serif;color:#fff;background:var(--bg);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 15% 15%,#59254d 0,transparent 38%),radial-gradient(ellipse at 85% 80%,#263b67 0,transparent 42%),linear-gradient(135deg,#120b20,#24112b 55%,#10172c)}
+#stars,#particles{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:-1}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;box-shadow:0 0 9px 2px #ffc5df;animation:twinkle var(--d) ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.15;transform:scale(.6)}to{opacity:1;transform:scale(1.5)}}
+.glow{position:fixed;width:340px;height:340px;border-radius:50%;filter:blur(85px);opacity:.22;pointer-events:none;animation:drift 12s ease-in-out infinite alternate}
+.glow.one{background:#ff3f8d;top:-130px;right:-100px}.glow.two{background:#6e69ff;bottom:-150px;left:-100px;animation-delay:-5s}
+@keyframes drift{to{transform:translate(70px,60px) scale(1.25)}}
+.screen{min-height:100svh;display:none;align-items:center;justify-content:center;padding:34px 18px;position:relative}
+.screen.active{display:flex;animation:screenIn .85s cubic-bezier(.2,.8,.2,1) both}
+@keyframes screenIn{from{opacity:0;transform:translateY(28px) scale(.98);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
+.panel{width:min(760px,100%);text-align:center;padding:clamp(26px,6vw,58px);border:1px solid #ffffff25;border-radius:32px;background:linear-gradient(145deg,#ffffff16,#ffffff08);box-shadow:0 25px 90px #0006,inset 0 1px #ffffff20;backdrop-filter:blur(18px);position:relative;overflow:hidden}
+.panel:before{content:"";position:absolute;inset:-2px;background:linear-gradient(115deg,transparent 20%,#ffffff12 45%,transparent 70%);transform:translateX(-100%);animation:shine 6s ease-in-out infinite}
+@keyframes shine{55%,100%{transform:translateX(100%)}}
+.kicker{letter-spacing:3px;color:#ffc3d8;font-size:12px;font-weight:800}
+h1{font-size:clamp(42px,10vw,82px);line-height:1.2;margin:15px 0;color:#fff;text-shadow:0 0 28px #ff70aa88}
+.gradient{background:linear-gradient(90deg,#fff,#ff9cbd,#fff0f6,#ff78a9);background-size:250%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradient 5s linear infinite}
+@keyframes gradient{to{background-position:250% center}}
+.lead{font-size:clamp(16px,3.8vw,21px);line-height:2;color:#f8dce8;max-width:570px;margin:14px auto 26px}
+.orb{width:160px;height:160px;margin:0 auto 24px;position:relative;display:grid;place-items:center;font-size:76px;filter:drop-shadow(0 0 28px #ff5c9b)}
+.orb:before,.orb:after{content:"";position:absolute;inset:0;border:1px solid #ffb7d5a8;border-radius:50%;animation:orbit 5s linear infinite}
+.orb:after{inset:-13px;border-style:dashed;animation-direction:reverse;animation-duration:18s}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.orb span{animation:heartbeat 1.4s ease-in-out infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}12%{transform:scale(1.17)}24%{transform:scale(1)}36%{transform:scale(1.12)}}
+.btn{border:0;cursor:pointer;position:relative;isolation:isolate;padding:14px 27px;margin:8px;border-radius:999px;font:800 16px 'Cairo',sans-serif;color:#351328;background:linear-gradient(110deg,#ffd8e6,#ff80ac,#ffc2d8);box-shadow:0 8px 30px #ff6f9f55;transition:transform .25s,box-shadow .25s}
+.btn:before{content:"";position:absolute;inset:-5px;border-radius:inherit;border:1px solid #ffc1d8;opacity:.55;animation:ring 2s ease-out infinite;z-index:-1}
+@keyframes ring{to{transform:scale(1.18);opacity:0}}
+.btn:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 14px 40px #ff6f9f88}
+.btn.secondary{color:#ffe7f0;background:#ffffff12;border:1px solid #ffffff35;box-shadow:none}
+.hint{color:#d6b7ca;font-size:12px;margin-top:20px}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#ff75a5,#ffe0ec);z-index:10;transition:width .7s}
+.messagebox{font-size:clamp(17px,4vw,21px);line-height:2.25;text-align:right;color:#ffedf4;min-height:245px}
+.messagebox p{opacity:0;transform:translateY(14px);animation:words .7s ease forwards}
+.messagebox p:nth-child(1){animation-delay:.25s}.messagebox p:nth-child(2){animation-delay:1s}.messagebox p:nth-child(3){animation-delay:1.8s}.messagebox p:nth-child(4){animation-delay:2.7s}
+@keyframes words{to{opacity:1;transform:none}}
+.divider{height:1px;background:linear-gradient(90deg,transparent,#ffb4d1,transparent);margin:24px 0}
+.bigquote{font-size:clamp(24px,6vw,40px);font-weight:900;line-height:1.8;color:#ffd5e4;text-shadow:0 0 22px #ff7aaa66}
+.choices{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.finalheart{font-size:90px;display:inline-block;animation:heartbeat 1.25s infinite;filter:drop-shadow(0 0 25px #ff5295)}
+#toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;background:#fff0f6;color:#61233f;padding:10px 18px;border-radius:99px;z-index:20;transition:.35s;white-space:nowrap}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.float{position:fixed;bottom:-50px;pointer-events:none;z-index:5;animation:rise var(--dur) linear forwards;filter:drop-shadow(0 0 8px #ff83b6)}
+@keyframes rise{to{transform:translateY(-115vh) rotate(var(--rot));opacity:0}}
+.burst{position:fixed;z-index:30;pointer-events:none;font-size:22px;animation:burst 1.4s ease-out forwards}
+@keyframes burst{from{transform:translate(0,0) scale(.4);opacity:1}to{transform:translate(var(--x),var(--y)) rotate(var(--r)) scale(1.5);opacity:0}}
+footer{font-size:12px;color:#d6b4c9;margin-top:25px}
+@media(max-width:480px){.panel{border-radius:25px}.messagebox{min-height:300px}.btn{width:100%;max-width:300px}.choices{align-items:center;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div><div id="stars"></div><div id="particles"></div>
+<div class="glow one"></div><div class="glow two"></div><div id="toast">❤️</div>
+
+<section class="screen active" id="s1">
+ <div class="panel">
+  <div class="kicker">A LITTLE MESSAGE • MADE WITH LOVE</div>
+  <div class="orb"><span>💗</span></div>
+  <div class="kicker">من فارس إلى</div>
+  <h1 class="gradient">بيباا</h1>
+  <p class="lead">في كلام كتير جوايا… وعملتلك المكان الصغير ده عشان أقولهولك بطريقة مختلفة.</p>
+  <button class="btn" onclick="go(2)">افتحي رسالتي يا بيباا ✨</button>
+  <div class="hint">اضغطي وكمّلي للآخر… كل خطوة فيها كلام من قلبي</div>
+ </div>
+</section>
+
+<section class="screen" id="s2">
+ <div class="panel">
+  <div class="kicker">FIRST THING FIRST</div>
+  <div class="orb"><span>🥺</span></div>
+  <h1 class="gradient" style="font-size:clamp(34px,8vw,58px)">أنا آسف</h1>
+  <p class="lead">لو في يوم ضايقتك، أو كلمة مني وجعتك، أو تصرف خلّاكي تحسي إنك مش مقدّرة… فـ أنا بعتذرلك من قلبي.</p>
+  <button class="btn" onclick="go(3)">كمّلي… لسه في كلام ❤️</button>
+ </div>
+</section>
+
+<section class="screen" id="s3">
+ <div class="panel">
+  <div class="kicker">A LETTER FROM MY HEART</div>
+  <h1 class="gradient" style="font-size:clamp(32px,7vw,55px)">يا بيباا…</h1>
+  <div class="divider"></div>
+  <div class="messagebox">
+   <p>أنا مش بعمل كل ده عشان أضغط عليكي أو أخليكي تاخدي قرار مش مقتنعة بيه.</p>
+   <p>أنا بس عايزك تعرفي إنك غالية عندي، وإن وجودك في حياتي فارق معايا بجد.</p>
+   <p>نفسي نعرف نتكلم بهدوء، نفهم بعض، ونسمع بعض من غير خوف ولا ضغط.</p>
+   <p>ولو في حاجة مضايقاكي أو مش عارفة تعبّري عنها، أنا مستعد أسمعك وأحاول أفهم.</p>
+  </div>
+  <button class="btn" onclick="go(4)">وفي حاجة كمان عايز أقولها… 🌹</button>
+ </div>
+</section>
+
+<section class="screen" id="s4">
+ <div class="panel">
+  <div class="kicker">NO PRESSURE, JUST HONESTY</div>
+  <div class="orb"><span>🌹</span></div>
+  <div class="bigquote">أنا مش طالب منك وعد…<br>أنا نفسي في فرصة نفهم بعض.</div>
+  <p class="lead">مش لازم تردي دلوقتي. خدي وقتك، والأهم عندي إنك تكوني مرتاحة وصريحة معايا.</p>
+  <button class="btn" onclick="go(5)">آخر حاجة… 💞</button>
+ </div>
+</section>
+
+<section class="screen" id="s5">
+ <div class="panel">
+  <div class="kicker">FROM FARES, WITH LOVE</div>
+  <div class="finalheart">❤️</div>
+  <h1 class="gradient" style="font-size:clamp(35px,8vw,62px)">بحبك يا بيباا</h1>
+  <p class="lead">ومهما كان ردك، أتمنى دايمًا تكوني بخير ومبسوطة. شكرًا إنك قريتي كلامي للآخر.</p>
+  <div class="divider"></div>
+  <div class="bigquote" style="font-size:clamp(21px,5vw,31px)">من فارس ❤️</div>
+  <div class="choices">
+   <button class="btn" onclick="burstHearts();toast('وصلتلك كل مشاعري ❤️')">وصلتني رسالتك 💗</button>
+   <button class="btn secondary" onclick="go(1)">اقريها من الأول ↺</button>
+  </div>
+  <footer>اتعملت مخصوص ليكي بكل الحب</footer>
+ </div>
+</section>
+
+<script>
+const total=5;
+function go(n){
+ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+ document.getElementById('s'+n).classList.add('active');
+ document.getElementById('progress').style.width=((n-1)/(total-1)*100)+'%';
+ window.scrollTo({top:0,behavior:'smooth'});
+ if(n===2||n===4||n===5) burstHearts();
+}
+const starField=document.getElementById('stars');
+for(let i=0;i<95;i++){
+ const e=document.createElement('i');e.className='star';
+ e.style.left=Math.random()*100+'%';e.style.top=Math.random()*100+'%';
+ e.style.setProperty('--d',(1.5+Math.random()*4)+'s');e.style.animationDelay=(-Math.random()*5)+'s';
+ starField.appendChild(e);
+}
+const symbols=['♥','♡','✦','🌸','💗','✨'];
+function floatOne(){
+ const e=document.createElement('span');e.className='float';e.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+ e.style.left=Math.random()*100+'vw';e.style.fontSize=(14+Math.random()*25)+'px';
+ e.style.setProperty('--dur',(5+Math.random()*6)+'s');e.style.setProperty('--rot',(Math.random()*100-50)+'deg');
+ document.body.appendChild(e);setTimeout(()=>e.remove(),11500);
+}
+setInterval(floatOne,420);
+function burstHearts(){
+ const symbols2=['💗','💖','💕','❤️','🌸','✨','💘'];
+ for(let i=0;i<38;i++){
+  const e=document.createElement('span');e.className='burst';e.textContent=symbols2[Math.floor(Math.random()*symbols2.length)];
+  e.style.left=(35+Math.random()*30)+'vw';e.style.top=(35+Math.random()*30)+'vh';
+  e.style.setProperty('--x',(Math.random()*560-280)+'px');e.style.setProperty('--y',(Math.random()*560-280)+'px');
+  e.style.setProperty('--r',(Math.random()*300-150)+'deg');document.body.appendChild(e);
+  setTimeout(()=>e.remove(),1500);
+ }
+}
+function toast(t){
+ const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');
+ setTimeout(()=>el.classList.remove('show'),2400);
+ burstHearts();
+}
+</script>
+</body>
+</html>
